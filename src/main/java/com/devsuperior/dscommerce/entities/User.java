@@ -84,6 +84,8 @@ public class User {
     }
 
 
+
+
     public String getPassword() {
         return password;
     }
@@ -92,9 +94,16 @@ public class User {
         this.password = password;
     }
 
+
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         if (!(o instanceof User user)) return false;
+
         return Objects.equals(id, user.id);
     }
 
@@ -102,10 +111,4 @@ public class User {
     public int hashCode() {
         return Objects.hashCode(id);
     }
-
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-
 }
